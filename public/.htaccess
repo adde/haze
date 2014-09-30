@@ -1,0 +1,10 @@
+Options -MultiViews
+
+RewriteEngine On
+#Add rewrite base if not in root
+#RewriteBase /haze/public
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
